@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="lib.ubint.jp.commonlib">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- NFCを利用するために必要なパーミッションを宣言する -->
+    <uses-permission android:name="android.permission.NFC" />
+    <!-- NFC非搭載端末からはダウンロードさせない -->
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <activity android:name=".activity.CommonActivity"></activity>
+    </application>
+
+
+</manifest>
