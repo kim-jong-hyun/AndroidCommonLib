@@ -88,7 +88,11 @@ public class GsonRequest<T> extends Request<T> {
     }
     
     @Override
-    public byte[] getBody() {
+    public byte[] getBody() throws AuthFailureError {
+        if (mObject == null) {
+            return super.getBody();
+        }
+
         String jsonString = mGson.toJson(mObject);
         try {
             return jsonString.getBytes(CHARSET_NAME);
